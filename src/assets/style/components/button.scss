@@ -1,0 +1,124 @@
+@use '../vars.scss' as *;
+
+.liu-button {
+  --liu-button-font-weight: var(--liu-font-weight-primary);
+  --liu-button-border-color: var(--liu-border-color);
+  --liu-button-bg-color: var(--liu-fill-color-blank);
+  --liu-button-text-color: var(--liu-text-color-regular);
+  --liu-button-disabled-text-color: var(--liu-disabled-text-color);
+  --liu-button-disabled-bg-color: var(--liu-fill-color-blank);
+  --liu-button-disabled-border-color: var(--liu-border-color-light);
+  --liu-button-hover-text-color: var(--liu-color-primary);
+  --liu-button-hover-bg-color: var(--liu-color-primary-light-9);
+  --liu-button-hover-border-color: var(--liu-color-primary-light-7);
+  --liu-button-active-text-color: var(--liu-button-hover-text-color);
+  --liu-button-active-border-color: var(--liu-color-primary);
+  --liu-button-active-bg-color: var(--liu-button-hover-bg-color);
+  --liu-button-outline-color: var(--liu-color-primary-light-5);
+  --liu-button-active-color: var(--liu-text-color-primary);
+}
+.liu-button {
+  // 书写基本样式
+  display: inline-flex;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  height: 40px;
+  background-color: var(--liu-button-bg-color);
+  border: var(--liu-border);
+  border-color: var(--liu-button-border-color);
+  color: var(--liu-button-text-color);
+  appearance: none; // 去除浏览器默认样式
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.1s;
+  font-weight: var(--liu-button-font-weight);
+  user-select: none; // 是否可以选择文本
+  vertical-align: middle;
+  padding: 12px 20px;
+  font-size: var(--liu-font-size-base);
+  border-radius: var(--liu-border-radius-base);
+  &:hover,
+  &:focus {
+    color: var(--liu-button-hover-text-color);
+    border-color: var(--liu-button-hover-border-color);
+    background-color: var(--liu-button-hover-bg-color);
+    outline: none;
+  }
+  &:active {
+    color: var(--liu-button-active-text-color);
+    border-color: var(--liu-button-active-border-color);
+    background-color: var(--liu-button-active-bg-color);
+    outline: none;
+  }
+  &.is-round {
+    border-radius: var(--liu-border-radius-round);
+  }
+  &.is-disabled,
+  &.is-disabled:hover &.is-disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    cursor: not-allowed;
+    opacity: 0.6;
+    color: var(--liu-button-disabled-text-color);
+    border-color: var(--liu-button-disabled-border-color);
+    background-color: var(--liu-button-disabled-bg-color);
+    background-image: none;
+    // outline: none;
+  }
+  [class*='liu-icon'] + span {
+    margin-left: 8px;
+    position: relative;
+    bottom: 2px;
+  }
+  &.is-circle {
+    border-radius: 50%;
+    padding: 12px;
+  }
+}
+
+@each $key in $themeArr {
+  .liu-button-#{$key} {
+    --liu-button-text-color: var(--liu-color-white);
+    --liu-button-bg-color: var(--liu-color-#{$key});
+    --liu-button-border-color: var(--liu-color-#{$key});
+    --liu-button-outline-color: var(--liu-color-#{$key}-light-5);
+    --liu-button-active-color: var(--liu-color-#{$key}-dark-2);
+    --liu-button-hover-text-color: var(--liu-color-white);
+    --liu-button-hover-bg-color: var(--liu-color-#{$key}-light-3);
+    --liu-button-hover-border-color: var(--liu-color-#{$key}-light-3);
+    --liu-button-active-bg-color: var(--liu-color-#{$key}-dark-2);
+    --liu-button-active-border-color: var(--liu-color-#{$key}-dark-2);
+    --liu-button-disabled-text-color: var(--liu-color-white);
+    --liu-button-disabled-bg-color: var(--liu-color-#{$key}-light-5);
+    --liu-button-disabled-border-color: var(--liu-color-#{$key}-light-5);
+  }
+  .liu-button-#{$key}.is-plain {
+    --liu-button-text-color: var(--liu-color-#{$key});
+    --liu-button-bg-color: var(--liu-color-#{$key}-light-9);
+    --liu-button-border-color: var(--liu-color-#{$key}-light-5);
+    --liu-button-hover-text-color: var(--liu-color-white);
+    --liu-button-hover-bg-color: var(--liu-color-#{$key});
+    --liu-button-hover-border-color: var(--liu-color-#{$key});
+    --liu-button-active-text-color: var(--liu-color-white);
+  }
+}
+
+.liu-button-large {
+  --liu-button-size: 50px;
+  height: var(--liu-button-size);
+  padding: 19px;
+  font-size: var(--liu-font-size-base);
+  border-radius: var(--liu-border-radius-base);
+}
+
+.liu-button-small {
+  --liu-button-size: 24px;
+  height: var(--liu-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--liu-border-radius-base) - 1px);
+}
