@@ -1,0 +1,60 @@
+.liu-dialog_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liu-dialog {
+  position: relative;
+  margin: 15vh auto 50px;
+  background: var(--liu-color-white);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px var(--vt-c-divider-light-1);
+  box-sizing: border-box;
+  width: 30%;
+}
+.liu-dialog_header {
+  padding: 20px 20px 10px;
+}
+.liu-dialog_header .liu-dialog_title {
+  line-height: 24px;
+  font-size: 18px;
+  color: #303133;
+}
+.liu-dialog_header .liu-dialog_headerBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.liu-dialog_header .liu-dialog_headerBtn .liu-icon-close {
+  color: var(--vt-c-text-dark-2);
+}
+.liu-dialog_body {
+  padding: 30px 20px;
+  color: var(--liu-text-color-regular);
+  font-size: 14px;
+  word-break: break-all;
+}
+.liu-dialog_footer {
+  padding: 10px 20px 20px;
+  text-align: right;
+  box-sizing: border-box;
+}
+.liu-dialog_footer .liu-button:first-child {
+  margin-right: 20px;
+}

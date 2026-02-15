@@ -5,6 +5,7 @@ import router from './router'
 import Icon from '@/components/Icon/Icon.vue'
 import Button from '@/components/Button/Button.vue'
 import Card from '@/components/Card/Card.vue'
+import Dialog from '@/components/Dialog/Dialog.vue'
 import './assets/style/index.scss'
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -16,6 +17,7 @@ const app = createApp(App)
 app.component('LiuIcon', Icon)
 app.component('LiuButton', Button)
 app.component('LiuCard', Card)
+app.component('LiuDialog', Dialog)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(router)
 
