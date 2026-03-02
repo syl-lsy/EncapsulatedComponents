@@ -1,0 +1,73 @@
+@charset "UTF-8";
+.liu-pager {
+  --liu-pager-theme-color: var(--liu-color-primary);
+  --liu-pager-size: 34px;
+  --liu-pager-padding: 0 12px;
+  --liu-pager-font-size: var(--liu-font-size-base);
+}
+
+.liu-pager {
+  text-align: center;
+}
+.liu-pager a {
+  border: 1px solid #e1e2e3;
+  background-color: #f0f2f5;
+  color: #303133;
+  height: var(--liu-pager-size);
+  display: inline-block;
+  line-height: var(--liu-pager-size);
+  border-radius: 2px;
+  padding: var(--liu-pager-padding);
+  margin: 8px;
+  font-size: var(--liu-pager-font-size);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  /* 当前页会挂上 active 类 */
+  /* a 标签禁用的时候会挂上 disabled 类 */
+}
+.liu-pager a:hover {
+  color: var(--liu-pager-theme-color);
+}
+.liu-pager a.active {
+  color: #fff;
+  background-color: var(--liu-pager-theme-color);
+  border-color: var(--liu-pager-theme-color);
+}
+.liu-pager a.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.liu-pager-primary {
+  --liu-pager-theme-color: var(--liu-color-primary);
+}
+
+.liu-pager-success {
+  --liu-pager-theme-color: var(--liu-color-success);
+}
+
+.liu-pager-warning {
+  --liu-pager-theme-color: var(--liu-color-warning);
+}
+
+.liu-pager-danger {
+  --liu-pager-theme-color: var(--liu-color-danger);
+}
+
+.liu-pager-info {
+  --liu-pager-theme-color: var(--liu-color-info);
+}
+
+.liu-pager--small {
+  --liu-pager-size: 25px;
+  --liu-pager-padding: 0 8px;
+  --liu-pager-font-size: var(--liu-font-size-small);
+}
+
+.liu-pager--large {
+  --liu-pager-size: 44px;
+  --liu-pager-padding: 0 16px;
+  --liu-pager-font-size: var(--liu-font-size-large);
+}
